@@ -77,21 +77,25 @@ I didn't just run the final model. I ran four deliberate experiments by removing
 
 ### Experiment 1 — Remove Derivative (Kd = 0)
 Temperature still reached 50°C but with a slightly larger overshoot. For a simple first-order system, this is manageable. In a real reactor with heat transfer lags or exothermic reactions, this overshoot could be dangerous.
+![Plot_1](EXP_1.png)
 
 **Lesson:** Kd is your damper. It becomes critical in faster or more complex systems.
 
 ### Experiment 2 — Remove Integral (Ki = 0)
 Temperature settled at ~29°C and stayed there permanently. Never reached 50°C. After the disturbance, it dropped further and never came back.
+![Plot_2](EXP_2.png)
 
 **Lesson:** Without Ki, there is permanent steady-state error. Kp and Kd can react to errors but they cannot eliminate them. Ki is non-negotiable for precision temperature control.
 
 ### Experiment 3 — High Proportional Gain (Kp = 10)
 Temperature reached setpoint faster. For this simple model, it still worked. But in a real plant with measurement noise, actuator lag, or a more complex process, Kp = 10 would cause violent oscillations or instability.
+![Plot_3](EXP_3.png).
 
 **Lesson:** High Kp improves speed but reduces stability margin. Tuning is always a tradeoff.
 
 ### Experiment 4 — Large Disturbance (−20 instead of −5)
 Temperature settled at 50°C initially. After the disturbance, it dropped to ~40°C and never recovered — even after 400 seconds.
+![Plot_4](EXP_4.png).
 
 **Why:** To maintain 50°C with a −20 continuous disturbance, the controller needs 50 + 20 = 70 units of control effort. But the saturation limit is 60. The controller was asking for more than the hardware could deliver. It got stuck at ~40°C permanently.
 

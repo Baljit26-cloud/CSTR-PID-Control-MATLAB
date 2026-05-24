@@ -127,15 +127,16 @@ Building this simulation costs nothing. Running the wrong experiment on a real r
 ## Graph Explanations
 
 ### Graph 1 — Temperature vs Time
-![Temperature Plot](cstr_pid_plots.png)
+![Temperature Plot](Temp_plot.png)
 
 - **Blue line** = actual reactor temperature
 - **Red dashed line** = target setpoint (50°C)
 - The blue line rises, slightly overshoots, settles at exactly 50°C
-- At t = 100s: visible dip from the cooling disturbance
+- At t = 100s: visible dip from the cooling disturbanc
 - Full recovery within ~20 seconds, then stable for the remaining 400 seconds
 
 ### Graph 2 — Control Effort (Heat Jacket Input) vs Time
+![Control_Effort Plot](Effort.png)
 - **Green line** = Q, the signal the PID sends to the heat jacket
 - **Red dotted lines** = saturation limits (±60)
 - Q starts high (~60) to rapidly heat the reactor from 0°C

@@ -1,7 +1,5 @@
 # CSTR Temperature Control Using PID — MATLAB & Simulink
 
-**By Baljit Kaur | B.Tech Chemical Engineering | NIT Jalandhar**
-
 ---
 
 ## What Is This Project?
